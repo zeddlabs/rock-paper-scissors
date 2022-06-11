@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --scissors-shadow: hsl(39, 89%, 39%);
+  --scissors-primary: hsl(40, 84%, 53%);
+  --paper-shadow: hsl(230, 89%, 52%);
+  --paper-primary: hsl(230, 89%, 65%);
+  --rock-shadow: hsl(349, 71%, 42%);
+  --rock-primary: hsl(349, 70%, 56%);
+  --lizard-shadow: hsl(261, 73%, 50%);
+  --lizard-primary: hsl(261, 72%, 63%);
+  --cyan-shadow: hsl(189, 59%, 43%);
+  --cyan-primary: hsl(189, 58%, 57%);
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+  --inset-shadow: hsl(217, 16%, 85%);
+  --bg-gradient-from: hsl(214, 47%, 23%);
+  --bg-gradient-to: hsl(237, 49%, 15%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  color: var(--dark-text);
+  background: radial-gradient(var(--bg-gradient-from), var(--bg-gradient-to))
+    no-repeat;
+  font-size: 1rem;
+}
+
+header {
+  width: min(100% - 2rem, 800px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid var(--header-outline);
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 5rem;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-board {
+  padding: 1rem 3rem;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 0.75rem;
+}
+
+.score-title {
+  color: var(--score-text);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+}
+
+.your-score {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.step-1 {
+  width: 329px;
+  height: 313px;
+  margin: 0 auto;
+  position: relative;
+  background: url(../images/bg-pentagon.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.scissors-btn,
+.spock-btn,
+.paper-btn,
+.lizard-btn,
+.rock-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 3rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.scissors-btn {
+  border: 1rem solid var(--scissors-primary);
+  top: -3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 0 var(--scissors-shadow), inset 0 6px 0 var(--inset-shadow);
+}
+
+.spock-btn {
+  border: 1rem solid var(--cyan-primary);
+  left: -3.25rem;
+  top: 3.75rem;
+  box-shadow: 0 6px 0 var(--cyan-shadow), inset 0 6px 0 var(--inset-shadow);
+}
+
+.paper-btn {
+  border: 1rem solid var(--paper-primary);
+  right: -3.25rem;
+  top: 3.75rem;
+  box-shadow: 0 6px 0 var(--paper-shadow), inset 0 6px 0 var(--inset-shadow);
+}
+
+.lizard-btn {
+  border: 1rem solid var(--lizard-primary);
+  bottom: -3.5rem;
+  left: 0;
+  box-shadow: 0 6px 0 var(--lizard-shadow), inset 0 6px 0 var(--inset-shadow);
+}
+
+.rock-btn {
+  border: 1rem solid var(--rock-primary);
+  bottom: -3.5rem;
+  right: 0;
+  box-shadow: 0 6px 0 var(--rock-shadow), inset 0 6px 0 var(--inset-shadow);
+}
+
+.rules-btn {
+  text-transform: uppercase;
+  background: transparent;
+  outline: none;
+  color: #fff;
+  border: 2px solid #aaa;
+  padding: 0.5rem 2rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  cursor: pointer;
+}
+
+.step-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.you-picked,
+.house-picked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.win-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.picked-title {
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.big {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.75rem solid;
+}
+
+.scissors {
+  border-color: var(--scissors-primary);
+  box-shadow: 0 10px 0 var(--scissors-shadow),
+    inset 0 10px 0 var(--inset-shadow);
+}
+
+.spock {
+  border-color: var(--cyan-primary);
+  box-shadow: 0 10px 0 var(--cyan-shadow), inset 0 10px 0 var(--inset-shadow);
+}
+
+.paper {
+  border-color: var(--paper-primary);
+  box-shadow: 0 10px 0 var(--paper-shadow), inset 0 10px 0 var(--inset-shadow);
+}
+
+.lizard {
+  border-color: var(--lizard-primary);
+  box-shadow: 0 10px 0 var(--lizard-shadow), inset 0 10px 0 var(--inset-shadow);
+}
+
+.rock {
+  border-color: var(--rock-primary);
+  box-shadow: 0 10px 0 var(--rock-shadow), inset 0 10px 0 var(--inset-shadow);
+}
+
+.big img {
+  height: 110px;
+}
+
+.win-title {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.play-again {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: var(--dark-text);
+  text-transform: uppercase;
+  padding: 0.75rem 2.5rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  letter-spacing: 2px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reset-btn {
+  text-transform: uppercase;
+  padding: 0.5rem 2.5rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  letter-spacing: 2px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+  color: #fff;
+  border: 2px solid #aaa;
+}
+
+.spock.win {
+  box-shadow: 0 10px 0 var(--cyan-shadow), inset 0 10px 0 var(--inset-shadow),
+    0 0 0 2.5rem rgba(255, 255, 255, 0.05),
+    0 0 0 5rem rgba(255, 255, 255, 0.025),
+    0 0 0 7.5rem rgba(255, 255, 255, 0.0125);
+}
+
+.scissors.win {
+  box-shadow: 0 10px 0 var(--scissors-shadow),
+    inset 0 10px 0 var(--inset-shadow), 0 0 0 2.5rem rgba(255, 255, 255, 0.05),
+    0 0 0 5rem rgba(255, 255, 255, 0.025),
+    0 0 0 7.5rem rgba(255, 255, 255, 0.0125);
+}
+
+.paper.win {
+  box-shadow: 0 10px 0 var(--paper-shadow), inset 0 10px 0 var(--inset-shadow),
+    0 0 0 2.5rem rgba(255, 255, 255, 0.05),
+    0 0 0 5rem rgba(255, 255, 255, 0.025),
+    0 0 0 7.5rem rgba(255, 255, 255, 0.0125);
+}
+
+.lizard.win {
+  box-shadow: 0 10px 0 var(--lizard-shadow), inset 0 10px 0 var(--inset-shadow),
+    0 0 0 2.5rem rgba(255, 255, 255, 0.05),
+    0 0 0 5rem rgba(255, 255, 255, 0.025),
+    0 0 0 7.5rem rgba(255, 255, 255, 0.0125);
+}
+
+.rock.win {
+  box-shadow: 0 10px 0 var(--rock-shadow), inset 0 10px 0 var(--inset-shadow),
+    0 0 0 2.5rem rgba(255, 255, 255, 0.05),
+    0 0 0 5rem rgba(255, 255, 255, 0.025),
+    0 0 0 7.5rem rgba(255, 255, 255, 0.0125);
+}
+
+.rules-modal {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100% - 2rem, 300px);
+  padding: 1rem;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: 0.75rem;
+  transition: all 0.5s ease;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  padding: 0 1rem 1rem;
+}
+
+.modal-body img {
+  max-width: 100%;
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  top: 2.5rem;
+}
+
+.attribution {
+  font-size: 12px;
+  margin-top: 7rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .step-2 {
+    gap: 2rem;
+  }
+
+  .big {
+    width: 175px;
+    height: 175px;
+    border-width: 1.25rem;
+  }
+
+  .big img {
+    height: 75px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    padding: 1rem;
+  }
+
+  .score-board {
+    padding: 1rem 2rem;
+  }
+
+  .step-1 {
+    transform: scale(0.8);
+  }
+
+  .step-2 {
+    flex-direction: column;
+  }
+
+  .rules-btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 7rem;
+  }
+
+  .attribution {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3rem;
+  }
+}
