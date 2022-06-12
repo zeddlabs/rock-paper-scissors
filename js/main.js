@@ -19,7 +19,6 @@ if (localStorage.getItem("score") === null) {
 }
 
 let score = Number(localStorage.getItem("score"));
-playerScore.innerText = score;
 
 document.addEventListener(RENDER_SCORE, () => {
   playerScore.innerText = localStorage.getItem("score");
@@ -100,4 +99,5 @@ resetBtn.addEventListener("click", () => {
   step1.classList.remove("hidden");
   step2.classList.add("hidden");
   document.dispatchEvent(new Event(RENDER_SCORE));
+  score = 0;
 });

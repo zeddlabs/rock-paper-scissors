@@ -37,6 +37,7 @@ body {
   background: radial-gradient(var(--bg-gradient-from), var(--bg-gradient-to))
     no-repeat;
   font-size: 1rem;
+  position: relative;
 }
 
 header {
@@ -163,6 +164,7 @@ header .logo {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  padding: 0 1rem;
 }
 
 .you-picked,
@@ -369,9 +371,13 @@ header .logo {
   .big img {
     height: 75px;
   }
+
+  .picked-title {
+    text-align: center;
+  }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 572px) {
   header {
     padding: 1rem;
   }
@@ -385,7 +391,25 @@ header .logo {
   }
 
   .step-2 {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+
+  .you-picked,
+  .house-picked {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .picked-title {
+    order: 2;
+    font-size: 1rem;
+  }
+
+  .win-info {
+    order: 3;
   }
 
   .rules-btn {
@@ -399,6 +423,18 @@ header .logo {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 3rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .big {
+    width: 130px;
+    height: 130px;
+    border-width: 0.813rem;
+  }
+
+  .big img {
+    height: 60px;
   }
 }
